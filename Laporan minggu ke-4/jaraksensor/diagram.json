@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "author": "Rifqi Athalah Genta Ramadhan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -71.96, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 30.3, "left": 101.5, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:ECHO", "esp:18", "green", [ "v0" ] ],
+    [ "esp:5", "ultrasonic1:TRIG", "orange", [ "h0" ] ],
+    [ "esp:3V3", "ultrasonic1:VCC", "red", [ "h0" ] ],
+    [ "esp:GND.1", "ultrasonic1:GND", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
